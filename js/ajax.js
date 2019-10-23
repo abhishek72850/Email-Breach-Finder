@@ -2,7 +2,7 @@ var requestAjax=function(options){
 
 	var object = {
 		url:"https://haveibeenpwned.com/unifiedsearch/",
-		type:"POST",
+		type:"GET",
 		datatype:'jsonp',
         crossDomain:true,
         isSuggestion:false
