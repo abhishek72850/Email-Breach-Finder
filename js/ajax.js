@@ -1,9 +1,17 @@
 var requestAjax=function(options){
 
 	var object = {
+<<<<<<< HEAD
 		url:"http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/abhishek@gmail.com/",
 		type:"GET",
 		datatype:'jsonp'
+=======
+		url:"https://haveibeenpwned.com/unifiedsearch/",
+		type:"GET",
+		datatype:'jsonp',
+        crossDomain:true,
+        isSuggestion:false
+>>>>>>> aa3b139724be076eeffdff712cece58382608f34
 	};
 
 	$.extend(object,options);
@@ -112,9 +120,14 @@ var requestAjax=function(options){
 				alert('Unable to Parse JSON '+err)
 			}
 		}
+<<<<<<< HEAD
 	}).fail(function( jqXHR, textStatus, errorThrown ) {
 		$('.loader').hide();
 	  	console.log(jqXHR);
 	  	alert(jqXHR.statusText);
 	});;
 }
+=======
+	});
+}
+>>>>>>> aa3b139724be076eeffdff712cece58382608f34
