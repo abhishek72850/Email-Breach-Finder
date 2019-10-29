@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta Access-Control-Allow-Origin="*" />
 	<title>Cloud</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -28,7 +30,7 @@
 			<span class="theme_change">Light or Dark Theme</span>
 		</div>
 		<div class="sub_head_cont search_form_cont">
-			<form>
+			<form method="GET" enctype="text/html" action="#">
 				<label for="searchtext"></label>
 				<input type="emai;" name="searchtext" id="searchtext" placeholder="What are you looking for?" required class="theme_change">
 				<button type="submit" ><img src="image\search_black_icon.png" alt="search icon" class="but_search_icon theme_change"></button>
@@ -39,7 +41,7 @@
 		<div class="search_result_cont">
 			<div class="sub_result_cont breach_found">
 				<div class="sub_breach breach_head">
-					<h2>Oh no — pwned!</h2>
+					<h2>Oh no &ndash; pwned!</h2>
 					<p>Pwned on <span id="breach_count">35</span> breached sites and found 
 						<span id="pastes_count">16</span> pastes (subscribe to search sensitive breaches)</p>
 				</div>
@@ -105,7 +107,9 @@
 				var emailSearch=$('#searchtext').val().trim();
 
 				//AJAX request to given API
-				requestAjax({data:{url:'<API here>'+emailSearch}});
+				requestAjax({url:'http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/'+emailSearch+'/'});
+
+				return false;
 				
 			});
 

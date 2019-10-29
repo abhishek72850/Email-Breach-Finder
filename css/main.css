@@ -135,6 +135,10 @@ section{
 .breach_head{
 	
 }
+.breach_head>h2{
+	font-size: 2em;
+	margin-bottom: 1em;
+}
 .breach_desc_cont{
 	display: flex;
 	justify-content: center;
@@ -146,12 +150,13 @@ section{
 	width: 80%;
 }
 .breach_desc_cont>div>div:first-child{
+	text-align: center;
 	width: 20%;
 	padding: 1em;
 }
 .breach_desc_cont>div>div:first-child>img{
-	width: 80%;
-	height: 80%;
+	width: 60%;
+	height: 60%;
 }
 .breach_desc_cont>div>div:last-child{
 	width: 80%;
@@ -161,17 +166,25 @@ section{
 	margin-bottom: .5em;
 }
 .breach_pastes_cont{
+	border-top: 1px solid #fff;
+	padding-top: 2em;
 	display: flex;
 	justify-content: center;
 }
 .breach_pastes_cont>div{
 	width: 60%;
 }
+.breach_pastes_cont>div>h2{
+	margin-bottom: 1em;
+}
 .breach_pastes_cont>div>table{
 	width: 100%;
 	border-collapse: collapse;
 	display: inline-table;
 	text-align: left;
+}
+.breach_pastes_cont>div>table>thead{
+	background-color: #004343;
 }
 .breach_pastes_cont>div>table tr{
 	height: 2.5em;

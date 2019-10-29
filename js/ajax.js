@@ -1,25 +1,23 @@
 var requestAjax=function(options){
 
 	var object = {
-		url:"https://haveibeenpwned.com/unifiedsearch/",
-		type:"POST",
-		datatype:'jsonp',
-        crossDomain:true,
-        isSuggestion:false
+		url:"http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/abhishek@gmail.com/",
+		type:"GET",
+		datatype:'jsonp'
 	};
 
 	$.extend(object,options);
 
 	univ.xhr=$.ajax(object).done(function(data){
+		console.log(data);
 
 		$('.loader').hide();
 
 		if(data==null){
 			console.log("No data found!!!");
+			alert("No data found!!!");
 		}
 		else{
-			console.log(data);
-
 			try{
 
 				data = JSON.parse(data);
@@ -72,7 +70,7 @@ var requestAjax=function(options){
 							$('.breach_desc_cont').append(breach_cont);
 						}
 
-						if(data.Pastes != null){
+						if(data.Pastes.length > 0){
 
 							$('.pastes_rows>tr').detach();
 
@@ -114,5 +112,9 @@ var requestAjax=function(options){
 				alert('Unable to Parse JSON '+err)
 			}
 		}
-	});
+	}).fail(function( jqXHR, textStatus, errorThrown ) {
+		$('.loader').hide();
+	  	console.log(jqXHR);
+	  	alert(jqXHR.statusText);
+	});;
 }
