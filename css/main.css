@@ -202,6 +202,9 @@ section{
 .breach_not_found{
 	background: linear-gradient(135deg,#0f3212 0,#348f38 100%);
 }
+.breach_not_found>div>h2{
+	margin-bottom: .5em;
+}
 
 body[class~="dark_theme"]{
 	background-color: #333;

@@ -69,32 +69,34 @@ var requestAjax=function(options){
 
 							$('.breach_desc_cont').append(breach_cont);
 						}
+						if(data.Pastes!=null){
 
-						if(data.Pastes.length > 0){
+							if(data.Pastes.length > 0){
 
-							$('.pastes_rows>tr').detach();
+								$('.pastes_rows>tr').detach();
 
-							$('#pastes_count').text(data.Pastes.length);
+								$('#pastes_count').text(data.Pastes.length);
 
-							for(var i in data.Pastes){
+								for(var i in data.Pastes){
 
-								var title=$('<td></td>',{
-									'text':data.Pastes[i].Title
-								});
-								var pdate=$('<td></td>',{
-									'text':data.Pastes[i].Date
-								});
-								var ecount=$('<td></td>',{
-									'text':data.Pastes[i].EmailCount
-								});
+									var title=$('<td></td>',{
+										'text':data.Pastes[i].Title
+									});
+									var pdate=$('<td></td>',{
+										'text':data.Pastes[i].Date
+									});
+									var ecount=$('<td></td>',{
+										'text':data.Pastes[i].EmailCount
+									});
 
-								var pasteRow=$('<tr></tr>');
+									var pasteRow=$('<tr></tr>');
 
-								pasteRow.append(title);
-								pasteRow.append(pdate);
-								pasteRow.append(ecount);
+									pasteRow.append(title);
+									pasteRow.append(pdate);
+									pasteRow.append(ecount);
 
-								$('.pastes_rows').append(pasteRow);
+									$('.pastes_rows').append(pasteRow);
+								}
 							}
 						}
 						else{
@@ -115,7 +117,13 @@ var requestAjax=function(options){
 
 	}).fail(function( jqXHR, textStatus, errorThrown ) {
 		$('.loader').hide();
-	  	console.log(jqXHR);
-	  	alert(jqXHR.statusText);
+		if(jqXHR.status==500){
+			$('.breach_found').css({'visibility':'collapse'});
+			$('.breach_not_found').css({'visibility':'visible'});
+		}
+		else{
+			console.log(jqXHR);
+	  		alert(jqXHR.statusText);
+		}
 	});;
 }
