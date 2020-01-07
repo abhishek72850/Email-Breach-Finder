@@ -1,7 +1,9 @@
 var requestAjax=function(options){
 
 	var object = {
-		url:"http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/abhishek@gmail.com/",
+		//url:"http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/test@gmail.com/",
+		//Update API Address
+		url:"http://185.196.100.87/validate/test@gmail.com/",
 		type:"GET",
 		datatype:'jsonp'
 	};
