@@ -111,8 +111,11 @@
 				var emailSearch=$('#searchtext').val().trim();
 
 				//AJAX request to given API
-				requestAjax({url:'http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/'+emailSearch+'/'});
-
+				//Old API
+				//requestAjax({url:'http://ec2-54-188-242-233.us-west-2.compute.amazonaws.com:8000/validate/'+emailSearch+'/'});
+				//Updated API
+				requestAjax({url:'http://185.196.100.87/validate/'+emailSearch+'/'});
+	
 				return false;
 				
 			});
